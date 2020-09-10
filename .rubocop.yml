@@ -1,0 +1,31 @@
+require: rubocop-rails
+
+AllCops:
+  Exclude:
+    - "db/**/*"
+    - "bin/**/*"
+    - "config/**/*"
+
+Metrics:
+  Enabled: false
+
+Style/HashSyntax:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never
