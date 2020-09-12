@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-git_source(:github) { |_repo| "https://github.com/#{repo}.git" }
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
 
@@ -14,7 +14,7 @@ gem 'puma', '~> 4.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -28,7 +28,10 @@ gem 'rack-cors'
 # Interactor Rails provides Rails support for the Interactor gem: https://github.com/collectiveidea/interactor-rails
 gem 'interactor-rails', '~> 2.0'
 
-gem 'bcrypt', '~> 3.1.7'
+# https://davidgay.org/programming/jwt-auth-rails-6-knock/
+# Knock's current release does not work with rails 6
+# Seamless JWT authentication for Rails API: https://github.com/nsarno/knock
+gem 'knock', github: 'nsarno/knock', branch: 'master', ref: '9214cd027422df8dc31eb67c60032fbbf8fc100b'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
