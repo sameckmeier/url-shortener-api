@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get '/:shortened_url', to: 'api/v1/urls#show'
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      delete '/urls/:shortened_url', to: 'urls#destroy'
+      
+      resources :urls, only: [:create]
+      resources :client_token, only: [:create]
+      resources :clients, only: [:create]
+    end
+  end
 end
