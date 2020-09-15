@@ -1,4 +1,7 @@
 class ShortenedUrl < ApplicationRecord
+  INITIAL_SEQUENCE_CHAR = 'a'.freeze
+  FINAL_SEQUENCE_CHAR = '9'.freeze
+
   validates :sequence, presence: true
 
   class << self
@@ -28,11 +31,11 @@ class ShortenedUrl < ApplicationRecord
   private
 
   def initial_char
-    'a'
+    INITIAL_SEQUENCE_CHAR
   end
 
   def final_char
-    '9'
+    FINAL_SEQUENCE_CHAR
   end
 
   def next_char(char)
