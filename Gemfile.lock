@@ -76,6 +76,10 @@ GEM
     concurrent-ruby (1.1.7)
     crass (1.0.6)
     diff-lcs (1.4.4)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.9.0)
     factory_bot (6.1.0)
       activesupport (>= 5.0.0)
@@ -218,9 +222,10 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
   byebug
-  factory_bot
-  factory_bot_rails
-  faker
+  dotenv-rails (~> 2.7.6)
+  factory_bot (~> 6.1.0)
+  factory_bot_rails (~> 6.1.0)
+  faker (~> 2.13.0)
   interactor-rails (~> 2.0)
   knock!
   listen (~> 3.2)

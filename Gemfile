@@ -36,9 +36,14 @@ gem 'knock', github: 'nsarno/knock', branch: 'master', ref: '9214cd027422df8dc31
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'factory_bot'
-  gem 'factory_bot_rails'
-  gem 'faker'
+
+  # Shim to load environment variables from .env into ENV in development: https://github.com/bkeepers/dotenv
+  gem 'dotenv-rails', '~> 2.7.6'
+  # A library for setting up Ruby objects as test data: https://github.com/thoughtbot/factory_bot
+  gem 'factory_bot', '~> 6.1.0'
+  gem 'factory_bot_rails', '~> 6.1.0'
+  # A library for generating fake data such as names, addresses, and phone numbers: https://github.com/faker-ruby/faker
+  gem 'faker', '~> 2.13.0'
   gem 'rspec-rails', '~> 4.0.1'
 end
 
