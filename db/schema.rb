@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2020_09_10_192835) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["client_id"], name: "index_urls_on_client_id"
+    t.index ["shortened"], name: "index_urls_on_shortened", unique: true
   end
 
   add_foreign_key "urls", "clients"

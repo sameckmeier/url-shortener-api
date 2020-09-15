@@ -5,7 +5,9 @@ describe 'Api::V1::ClientToken' do
     let(:client) { create(:client) }
 
     it 'creates a client token' do
-      post '/api/v1/client_token', params: { auth: { client_id: client.id, secret: client.secret } }, headers: default_headers
+      post '/api/v1/client_token',
+           params: { auth: { client_id: client.id, secret: client.secret } },
+           headers: default_headers
 
       body = JSON.parse(response.body)
       jwt = Knock::AuthToken.new(token: body['jwt']).payload
