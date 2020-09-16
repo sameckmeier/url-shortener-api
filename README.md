@@ -39,7 +39,7 @@
 # Thought process
 
 For the most part, this is a straightforward, rails api using token authentication. However, there are a few decisions that I'd like to explain a bit more in-depth:
-- **Docker:** I believe using docker in development is a great way to get engineers up and running on projects without needing to worry about downloading dependencies to their local environment that could potentially break something, which only slows down the onboarding time for an engineer.
+- **Docker:** I believe using docker in development is a great way to get engineers up and running on projects without them needing to worry about downloading dependencies to their local environment that could potentially break something, which only slows down the onboarding time for an engineer.
 - **Knock/JWT:** I decided to use Knock since it is a lightweight, auth solution using JWTs. Although it isn't difficult to implment your own JWT-based auth, I'd rather not reinvent the wheel!
 - **Shortend Url Algorithm:** I wanted to avoid any collision-related issues with generating random, alphanumeric sequences, so I implemented an algorithm that starts with, a. Everytime this service creates an Url record, we increment the sequence, ie, a increments to b, A increments to B, and 0 increments to 1. Once we exhaust all combinations for the current sequence, we append a char to our sequence and reset it. This ensures a worst-case runtime of O(n) when generating a shortened url.
 - **Interactors:** I prefer to store all business logic in service objects since doing so decouples your business logic, models, and controllers from each other.
