@@ -13,15 +13,17 @@ class ShortenedUrl < ApplicationRecord
     i = chars.length - 1
 
     if chars[i] == final_char
-      while i >= 0 && chars[i] == final_char
+      while increment_char?(i) && chars[i] == final_char
         chars[i] = next_char(chars[i])
         i -= 1
       end
-
-      chars << initial_char if i == - 1
     end
 
-    chars[i] = next_char(chars[i]) if i > -1
+    if increment_char?(i)
+      chars[i] = next_char(chars[i])
+    else
+      chars << initial_char
+    end
 
     update!(sequence: chars.join(''))
 
@@ -40,5 +42,9 @@ class ShortenedUrl < ApplicationRecord
 
   def next_char(char)
     char.tr('a-zA-Z0-9', 'b-zA-Z0-9a')
+  end
+
+  def increment_char?(i)
+    i >= 0
   end
 end
