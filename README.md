@@ -20,7 +20,7 @@
 ## Without Docker:
 - Start your local postgres server using: https://www.postgresql.org/docs/9.1/server-start.html
 	- If you installed using homebrew use: https://wiki.postgresql.org/wiki/Homebrew
-- Execute `createuser -s postgres to create default postgres user`
+- Execute `createuser -s postgres` to create default postgres user
 - Execute `bin/setup`
 - Execute `rails s` to start server and send requests to http://127.0.0.1:3000
 
