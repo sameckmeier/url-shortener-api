@@ -44,7 +44,7 @@ class ShortenedUrl < ApplicationRecord
     char.tr('a-zA-Z0-9', 'b-zA-Z0-9a')
   end
 
-  def increment_char?(i)
-    i >= 0
+  def increment_char?(sequence_index)
+    sequence_index >= 0
   end
 end
