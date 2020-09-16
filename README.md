@@ -36,6 +36,9 @@
 	- If you installed using homebrew use: https://wiki.postgresql.org/wiki/Homebrew
 - Execute `rspec`
 
+# API Docs
+- Navigate to `/docs`
+
 # Thought process
 
 For the most part, this is a straightforward, rails api using token authentication. However, there are a few decisions that I'd like to explain a bit more in-depth:
