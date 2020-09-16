@@ -15,14 +15,14 @@
 - Execute `cd /path/to/url-shortener-api`
 
 ## Docker:
-- Execute `docker-compose up --build`
+- Execute `docker-compose up --build` to start api server and db server. Now you can send requests to http://0.0.0.0:3000
 
 ## Without Docker:
 - Start your local postgres server using: https://www.postgresql.org/docs/9.1/server-start.html
 	- If you installed using homebrew use: https://wiki.postgresql.org/wiki/Homebrew
 - Execute `createuser -s postgres to create default postgres user`
 - Execute `bin/setup`
-- Execute `rails s` to start server
+- Execute `rails s` to start server and send requests to http://127.0.0.1:3000
 
 # Testing Instructions
 
