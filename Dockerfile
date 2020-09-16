@@ -18,4 +18,4 @@ RUN chmod +x /usr/bin/entrypoint.sh
 
 ENTRYPOINT ["entrypoint.sh"]
 
-CMD ["rails", "server", "-b", "127.0.0.1"]
+CMD ["rails", "server", "-b", "0.0.0.0"]
