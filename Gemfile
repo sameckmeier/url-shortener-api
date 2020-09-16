@@ -33,6 +33,8 @@ gem 'interactor-rails', '~> 2.0'
 # Seamless JWT authentication for Rails API: https://github.com/nsarno/knock
 gem 'knock', github: 'nsarno/knock', branch: 'master', ref: '9214cd027422df8dc31eb67c60032fbbf8fc100b'
 
+gem 'apipie-rails', '~> 0.5.18'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

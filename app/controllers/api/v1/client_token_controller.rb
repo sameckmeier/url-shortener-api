@@ -1,4 +1,13 @@
 class Api::V1::ClientTokenController < Knock::AuthTokenController
+  api :POST, 'api/v1/client_token', 'Generates a JWT'
+  param :auth, Hash, required: true do
+    param :client_id, String, required: true
+    param :secret, String, required: true
+  end
+  returns code: 201 do
+    property :jwt, String
+  end
+
   private
 
   # Below methods override ones defined by Knock gem: https://github.com/nsarno/knock/blob/master/app/controllers/knock/auth_token_controller.rb

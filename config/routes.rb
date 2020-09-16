@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  apipie
   get '/:shortened_url', to: 'api/v1/urls#show'
 
   namespace :api, defaults: { format: :json } do
